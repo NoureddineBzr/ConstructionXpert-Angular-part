@@ -1,0 +1,13 @@
+.task-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+button {
+  margin: 5px;
+}
