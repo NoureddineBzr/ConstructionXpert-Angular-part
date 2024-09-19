@@ -9,10 +9,10 @@ import lombok.Setter;
 @Setter
 @Entity
 public class Admin extends User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    public Admin(Long id, String fullName, String username, String password, String email, Role role) {
+        super(id, fullName, username, password, email, role);
+        this.setRole(Role.ADMIN);
+    }
 
     public Admin() {
         this.setRole(Role.ADMIN);

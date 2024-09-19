@@ -1,81 +1,133 @@
-version: '3.8'
+version: "3.8"
 services:
-  project-service:
-    build: ./project-service
-    ports:
-      - "8081:8081"
-    networks:
-      - constructionxpert-network
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://project-db:3306/project_db?createDatabaseIfNotExist=true
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: 1234
-
-  task-service:
-    build: ./task-service
-    ports:
-      - "8082:8082"
-    networks:
-      - constructionxpert-network
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://task-db:3306/task_db?createDatabaseIfNotExist=true
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: 1234
-
-  resource-service:
-    build: ./resource-service
-    ports:
-      - "8083:8083"
-    networks:
-      - constructionxpert-network
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://resource-db:3306/resource_db?createDatabaseIfNotExist=true
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: 1234
-
-  project-db:
-    image: mysql:8
-    environment:
-      MYSQL_DATABASE: project_db
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 1234
-      MYSQL_ROOT_PASSWORD: 1234
-    ports:
-      - "3306:3306"
-    networks:
-      - constructionxpert-network
-
-  task-db:
-    image: mysql:8
-    environment:
-      MYSQL_DATABASE: task_db
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 1234
-      MYSQL_ROOT_PASSWORD: 1234
-    ports:
-      - "3307:3306"
-    networks:
-      - constructionxpert-network
-
-  resource-db:
-    image: mysql:8
-    environment:
-      MYSQL_DATABASE: resource_db
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 1234
-      MYSQL_ROOT_PASSWORD: 1234
-    ports:
-      - "3308:3306"
-    networks:
-      - constructionxpert-network
-
   eureka-server:
-    build: ./eureka-server
+    build:
+      context: ./eureka-server
     ports:
       - "8761:8761"
+    environment:
+      - SPRING_SECURITY_USER_NAME=admin
+      - SPRING_SECURITY_USER_PASSWORD=admin
     networks:
-      - constructionxpert-network
+      - microservices-net
+
+  gateway-service:
+    build:
+      context: ./gateway-service
+    ports:
+      - "8888:8888"
+    depends_on:
+      - eureka-server
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://admin:admin@eureka-server:8761/eureka/
+    networks:
+      - microservices-net
+
+  project-service:
+    build:
+      context: ./project-service
+    ports:
+      - "8081:8081"
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://admin:admin@eureka-server:8761/eureka/
+    depends_on:
+      - eureka-server
+      - projectdb
+    networks:
+      - microservices-net
+
+  resource-service:
+    build:
+      context: ./resource-service
+    ports:
+      - "8082:8082"
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://admin:admin@eureka-server:8761/eureka/
+    depends_on:
+      - eureka-server
+      - resourcedb
+    networks:
+      - microservices-net
+
+  task-service:
+    build:
+      context: ./task-service
+    ports:
+      - "8083:8083"
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://admin:admin@eureka-server:8761/eureka/
+    depends_on:
+      - eureka-server
+      - taskdb
+    networks:
+      - microservices-net
+
+  user-service:
+    build:
+      context: ./user-service
+    ports:
+      - "8080:8080"
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://admin:admin@eureka-server:8761/eureka/
+    depends_on:
+      - eureka-server
+      - userdb
+    deploy:
+      restart_policy:
+        condition: on-failure
+    networks:
+      - microservices-net
+
+  projectdb:
+    image: "mysql:latest"
+    restart: always
+    environment:
+      MYSQL_DATABASE: project_db_2
+      MYSQL_ROOT_PASSWORD: 1234
+    volumes:
+      - project-db:/var/lib/mysql
+    networks:
+      - microservices-net
+
+  resourcedb:
+    image: "mysql:latest"
+    restart: always
+    environment:
+      MYSQL_DATABASE: resource_db_2
+      MYSQL_ROOT_PASSWORD: 1234
+    volumes:
+      - resource-db:/var/lib/mysql
+    networks:
+      - microservices-net
+
+  taskdb:
+    image: "mysql:latest"
+    restart: always
+    environment:
+      MYSQL_DATABASE: task_db_2
+      MYSQL_ROOT_PASSWORD: 1234
+    volumes:
+      - task-db:/var/lib/mysql
+    networks:
+      - microservices-net
+
+  userdb:
+    image: "mysql:latest"
+    restart: always
+    environment:
+      MYSQL_DATABASE: user_db_2
+      MYSQL_ROOT_PASSWORD: 1234
+    volumes:
+      - user-db:/var/lib/mysql
+    networks:
+      - microservices-net
+
+volumes:
+  project-db:
+  resource-db:
+  task-db:
+  user-db:
 
 networks:
-  constructionxpert-network:
+  microservices-net:
     driver: bridge

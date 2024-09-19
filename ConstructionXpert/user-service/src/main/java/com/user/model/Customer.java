@@ -8,13 +8,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @Entity
 public class Customer extends User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    public Customer(Long id, String fullName, String username, String password, String email, Role role) {
+        super(id, fullName, username, password, email, role);
+        this.setRole(Role.CUSTOMER);
+    }
 
     public Customer() {
         this.setRole(Role.CUSTOMER);
