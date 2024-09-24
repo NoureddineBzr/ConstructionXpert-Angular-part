@@ -1,7 +1,6 @@
 package com.gateway;
 
-import com.gateway.filter.RouteValidator;
-import com.gateway.util.JwtUtil;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;

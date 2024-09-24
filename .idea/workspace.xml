@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="febfdd9f-cb09-44c2-884b-f972e4655663" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ConstructionXpertFrontEnd/src/app/components/addresource/addresource.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionXpertFrontEnd/src/app/components/addresource/addresource.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConstructionXpertFrontEnd/src/app/components/task/task.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionXpertFrontEnd/src/app/components/task/task.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="febfdd9f-cb09-44c2-884b-f972e4655663" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +108,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1727166093717</updated>
-      <workItem from="1727166094815" duration="1100000" />
+      <workItem from="1727166094815" duration="1606000" />
     </task>
     <servers />
   </component>
