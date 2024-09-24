@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {ResourceType} from "../../enums/resource-type";
+import {ResourceService} from "../../Services/resource.service";
+import {Resource} from "../../entities/resource";
 
 @Component({
   selector: 'app-addresource',
@@ -24,7 +28,7 @@ export class AddresourceComponent {
   onSubmit(): void {
     if (this.resourceForm.valid) {
       const resource: Resource = this.resourceForm.value;
-      this.resourceService.addResource(resource).subscribe({
+      this.resourceService.createResource(resource).subscribe({
         next: (createdResource) => {
           console.log('Resource created:', createdResource);
           this.resourceForm.reset();
@@ -35,5 +39,5 @@ export class AddresourceComponent {
       });
     }
   }
-}
+
 }

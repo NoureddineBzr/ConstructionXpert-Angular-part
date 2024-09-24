@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable} from "rxjs";
+
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {TaskService} from "../../Services/task.service";
 import {Task} from "../../entities/task";
 import {AsyncPipe, DatePipe} from "@angular/common";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-task',
