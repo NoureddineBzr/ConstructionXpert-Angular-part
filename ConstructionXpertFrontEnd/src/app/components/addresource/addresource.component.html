@@ -1,0 +1,32 @@
+
+<form [formGroup]="resourceForm" (ngSubmit)="onSubmit()" class="resource-form">
+  <div class="form-group">
+    <label>Name:</label>
+    <input formControlName="name" type="text" required />
+  </div>
+
+  <div class="form-group">
+    <label>Quantity:</label>
+    <input formControlName="quantity" type="number" min="1" required />
+  </div>
+
+  <div class="form-group">
+    <label>Type:</label>
+    <select formControlName="type" required>
+      <option value="" disabled selected>--Select Resource Type--</option>
+      <option *ngFor="let type of resourceTypes" [value]="type">{{ type }}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Provider:</label>
+    <input formControlName="provider" type="text" required />
+  </div>
+
+  <div class="form-group">
+    <label>Task ID:</label>
+    <input formControlName="taskId" type="number" required />
+  </div>
+
+  <button type="submit" [disabled]="resourceForm.invalid" class="submit-btn">Add Resource</button>
+</form>
