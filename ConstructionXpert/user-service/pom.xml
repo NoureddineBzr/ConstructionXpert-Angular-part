@@ -22,7 +22,7 @@
 		<maven.compiler.target>21</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<sonar.host.url>http://localhost:9000</sonar.host.url>
-		<sonar.login>sqp_2cf6e39d066a8691ea34aa2568db57890914a856</sonar.login>
+		<sonar.login>sqa_7da90f3382422c2e740299e835d5363240c7c322</sonar.login>
 
 	</properties>
 
