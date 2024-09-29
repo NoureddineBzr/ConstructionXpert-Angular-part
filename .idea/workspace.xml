@@ -10,6 +10,10 @@
       <change beforePath="$PROJECT_DIR$/ConstructionXpert/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionXpert/eureka-server/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConstructionXpert/gateway-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionXpert/gateway-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConstructionXpert/project-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionXpert/project-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConstructionXpert/project-service/src/main/java/com/project/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionXpert/project-service/src/main/java/com/project/controller/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConstructionXpert/project-service/src/main/java/com/project/repository/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionXpert/project-service/src/main/java/com/project/repository/ProjectRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConstructionXpert/project-service/src/main/java/com/project/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionXpert/project-service/src/main/java/com/project/service/ProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConstructionXpert/project-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionXpert/project-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConstructionXpert/resource-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionXpert/resource-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConstructionXpert/task-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionXpert/task-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConstructionXpert/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ConstructionXpert/user-service/pom.xml" afterDir="false" />
@@ -22,37 +26,47 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 6
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2mVeIZfmM0GpgVpHTcXmQr0UEax" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Docker.ConstructionXpert: Compose Deployment.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "taskRessource",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "configurable.group.language",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.ConstructionXpert.sonarqubedb: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.ConstructionXpert: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.constructionxpert-services [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.constructionxpert-services [install].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GatewayServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ProjectServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;taskRessource&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -62,7 +76,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.ConstructionXpert: Compose Deployment">
+  <component name="RunManager" selected="Spring Boot.EurekaServerApplication">
     <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="eureka-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.constructionxpert.eureka.EurekaServerApplication" />
@@ -113,12 +127,28 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="ConstructionXpert.sonarqubedb: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="sonarqubedb" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="ConstructionXpert/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.ConstructionXpert.sonarqubedb: Compose Deployment" />
         <item itemvalue="Docker.ConstructionXpert: Compose Deployment" />
       </list>
     </recent_temporary>
@@ -139,7 +169,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1727166093717</updated>
-      <workItem from="1727166094815" duration="7840000" />
+      <workItem from="1727166094815" duration="11250000" />
+      <workItem from="1727189571145" duration="3336000" />
+      <workItem from="1727270627507" duration="1225000" />
+      <workItem from="1727275800121" duration="2352000" />
+      <workItem from="1727363868287" duration="5569000" />
     </task>
     <servers />
   </component>

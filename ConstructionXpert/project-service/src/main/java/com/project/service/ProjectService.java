@@ -4,6 +4,9 @@ import com.project.exception.ProjectNotFoundException;
 import com.project.model.Project;
 import com.project.repository.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -44,5 +47,9 @@ public class ProjectService {
 
     public Boolean existProject(Long id) {
         return projectRepository.findById(id).isPresent();
+    }
+    public Page<Project> getAllProjects(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return projectRepository.findAll(pageable);
     }
 }

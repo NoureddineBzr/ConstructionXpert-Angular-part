@@ -5,9 +5,9 @@ spring:
   application:
     name: project-service
   datasource:
-    url: jdbc:mysql://projectdb:3306/project_db_2?createDatabaseIfNotExist=true
-    username: springstudent
-    password: springstudent
+    url: jdbc:mysql://localhost:3306/project_db_2?createDatabaseIfNotExist=true
+    username: root
+    password: jujuRO55
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:

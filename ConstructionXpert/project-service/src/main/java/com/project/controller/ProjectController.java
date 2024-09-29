@@ -4,6 +4,7 @@ import com.project.exception.ProjectNotFoundException;
 import com.project.model.Project;
 import com.project.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -59,5 +60,14 @@ public class ProjectController {
     public ResponseEntity<Boolean> existProject(@PathVariable("id") Long id) {
         boolean exist = projectService.existProject(id);
         return ResponseEntity.ok(exist);
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN', 'CUSTOMER')")
+    @GetMapping("/page")
+    public ResponseEntity<Page<Project>> getAllProjectsPaginated(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+        Page<Project> projectPage = projectService.getAllProjects(page, size);
+        return ResponseEntity.ok(projectPage);
     }
 }
